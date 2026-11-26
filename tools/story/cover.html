@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant-HK"><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+.board{width:1080px;height:1350px;background:var(--white);display:flex;flex-direction:column}
+.top{position:relative;background:var(--green);color:var(--white);padding:64px 80px 56px;display:flex;flex-direction:column;gap:22px;overflow:hidden}
+.top .deco{right:-150px;top:-40px;width:640px;height:536px;opacity:.16}
+.row{display:flex;justify-content:space-between;align-items:center;position:relative}
+.tag{font-size:26px;color:var(--white);border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 22px}
+.tag svg{width:34px;height:34px}
+.date{font-size:24px;color:var(--sage)}
+h1{margin:6px 0 0;font-size:76px;font-weight:900;line-height:1.15;position:relative}
+.big{position:relative;display:flex;align-items:flex-end;gap:24px}
+.big .n{font-size:250px;font-weight:800;line-height:.95;color:var(--sage);letter-spacing:-8px}
+.big .cap{flex:none;padding-bottom:22px;display:flex;flex-direction:column;gap:8px}
+.big .cap b{font-size:34px;font-weight:700;line-height:1.35}
+.big .cap span{font-size:23px;color:var(--sage)}
+.bottom{flex:1;padding:56px 80px 40px;display:flex;flex-direction:column;gap:40px}
+.pt{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:center;padding-bottom:40px;border-bottom:2px solid var(--sage)}
+.pt.last{border-bottom:0;padding-bottom:0}
+.stat{height:120px;border-radius:22px;background:var(--sage);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.stat .v{font-size:56px;font-weight:800;line-height:1}
+.stat .k{font-size:19px;font-weight:700}
+.stat.q{background:var(--navy);color:var(--white)}
+.pt h3{margin:0 0 6px;font-size:32px;font-weight:700;line-height:1.35;color:var(--black)}
+.pt p{margin:0;font-size:25px;line-height:1.55;color:var(--ink-soft)}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.foot .src{font-size:17px;line-height:1.55;color:var(--muted)}
+.foot .more{flex:none;background:var(--green);color:var(--white);border-radius:16px;padding:14px 22px;font-size:21px;font-weight:700;line-height:1.35;text-align:right}
+.foot .more span{display:block;font-size:17px;font-weight:500;color:var(--sage)}
+</style></head><body>
+<div class="board">
+  <section class="top">
+    <svg class="deco" viewBox="0 0 247 207" aria-hidden="true"><path fill="#d4e0d9" d="M246.83,151.11l-52.27-94.87c-.03-.25-.1-.51-.23-.74L162.58,1.02c-.34-.59-.98-.95-1.66-.95L33.44,0c-.69,0-1.32.36-1.66.96L.26,55.28c-.34.58-.35,1.3-.02,1.89l52.27,94.87c.03.25.1.51.23.74l31.74,54.47c.34.59.98.95,1.66.95l127.49.07c.69,0,1.32-.36,1.66-.96l31.51-54.33c.34-.58.35-1.3.02-1.89ZM189.76,152.23h-80.13c-.69,0-1.32-.37-1.660-.96l-28.08-48.7-24.26-43.67c-.71-1.28.21-2.85,1.68-2.85h80.57c.69,0,1.32.37,1.66.96l16.02,27.78,35.89,64.58c.71,1.28-.21,2.86-1.68,2.86Z"/></svg>
+    <div class="row">
+      <div class="tag">職場Ikigai｜阿維</div>
+      <div class="date">2026年12月</div>
+    </div>
+    <h1>明年人工加幾多？</h1>
+    <div class="big">
+      <div class="n num">1.44%</div>
+      <div class="cap"><b>僱主估<br>2027 年<br>平均加人工</b><span>其他調查估：2.9%–3.8%</span></div>
+    </div>
+  </section>
+  <section class="bottom">
+    <div class="pt">
+      <div class="stat"><div class="v num">1.9%</div><div class="k">今年通脹預測</div></div>
+      <div><h3>人工追唔上物價？</h3><p>政府估今年基本通脹大約 1.9%。人工加得少過通脹，其實買到嘅嘢仲少咗。</p></div>
+    </div>
+    <div class="pt">
+      <div class="stat"><div class="v">約 <span class="num">2</span> 倍</div><div class="k">高評級員工分得多</div></div>
+      <div><h3>「平均」唔等於你</h3><p>大約一成最高評級嘅員工，分咗大約兩成加薪預算；表現一般嘅大多數，加幅通常低過平均。</p></div>
+    </div>
+    <div class="pt last">
+      <div class="stat q"><div class="v">？</div><div class="k">問問自己</div></div>
+      <div><h3>收入跟唔跟得上你嘅成長？</h3><p>做咗幾年，你份收入有冇跟住你嘅能力同經驗一齊升？</p></div>
+    </div>
+    <div class="foot">
+      <div class="src">資料來源：Jobsdb《2027 招聘、薪酬及福利調查報告》（2026年10月）；香港人力資源管理學會（2026年11月）；WTW 薪酬預算規劃調查（2026年7月）；政府經濟顧問辦公室（2026年11月）｜資料整理：阿維</div>
+      <div class="more">睇完整分析<span>ahwai79.github.io/ikigai</span></div>
+    </div>
+  </section>
+</div>
+</body></html>

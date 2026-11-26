@@ -1,17 +1,411 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>職場Ikigai｜阿維</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="僱主估 2027 年平均加人工 1.44%，今年通脹大約 1.9%。三份調查擺埋一齊睇，再做個 30 秒自我檢查。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="職場Ikigai｜明年人工加幾多？">
+<meta property="og:description" content="僱主估 2027 年平均加人工 1.44%，今年通脹大約 1.9%。人工追唔追得上物價？">
+<meta property="og:url" content="https://ahwai79.github.io/ikigai/">
+<meta property="og:image" content="https://ahwai79.github.io/ikigai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>職場Ikigai｜明年人工加幾多？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Fustat:wght@500;600;700;800&display=swap">
 <style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#05414c;color:#ffffff;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;text-align:center;padding:24px;box-sizing:border-box}
-h1{margin:0 0 10px;font-size:32px}
-p{margin:0;color:#d4e0d9;font-size:16px;line-height:1.7}
+/* Layout: one reading column in Team Servant colours (deep green, sage, navy, sand). */
+:root{
+  --bg:#ffffff; --paper:#ffffff; --ink:#161616; --muted:#566468; --line:#dfe6e2;
+  --green:#05414c; --sage:#d4e0d9; --navy:#132f4c; --sand:#e9e0d3; --sand-soft:#f4efe7;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --num:"Fustat","Noto Sans TC",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:#f7f5f2;color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.8;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--green)}
+.wrap{max-width:660px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-left,0px)) 44px max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:26px}
+svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums}
+h1,h2,h3{text-wrap:balance}
+
+.mast{display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.avatar{width:46px;height:46px;border-radius:50%;overflow:hidden;flex:none;background:var(--green)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.brand{font-weight:700;font-size:19px;line-height:1.3;display:flex;align-items:center;gap:8px}
+.issue{font-size:13px;color:var(--muted);letter-spacing:.04em}
+
+.hero{position:relative;overflow:hidden;background:var(--green);color:var(--bg);border-radius:20px;padding:26px 22px 24px}
+.hero{isolation:isolate}.hero .deco{position:absolute;right:-80px;top:-20px;width:300px;height:252px;opacity:.16;z-index:-1}
+.hero h1{position:relative;margin:0;font-size:clamp(30px,8vw,40px);line-height:1.25;font-weight:900}
+.hero .big{position:relative;display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-top:14px}
+.hero .n{font-family:var(--num);font-weight:800;font-size:clamp(70px,22vw,112px);line-height:.95;color:var(--sage);letter-spacing:-2px}
+.hero .cap{padding-bottom:10px;font-size:15px;line-height:1.5;color:var(--sage)}
+.hero .cap b{display:block;font-size:17px;color:var(--bg)}
+.intro p{margin:0 0 10px}
+.intro p:last-child{margin:0;color:var(--muted)}
+
+.label{font-size:12.5px;letter-spacing:.14em;color:var(--green);font-weight:700;margin:0 0 10px}
+h2{font-size:22px;line-height:1.4;margin:0 0 12px}
+
+.quick{background:var(--sage);border-radius:18px;padding:18px 14px;display:flex;flex-direction:column;gap:10px}
+.quick h2{margin:0 4px 2px}
+.qcard{background:var(--paper);border-radius:14px;padding:14px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:center}
+.qcard .v{font-family:var(--num);font-weight:800;font-size:26px;line-height:1.1;color:var(--green);text-align:center}
+.qcard .v small{display:block;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--muted);margin-top:4px}
+.qcard p{margin:0;font-size:15.5px;line-height:1.7}
+
+.box{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 16px}
+.box p{margin:0 0 10px}
+.box p:last-child{margin-bottom:0}
+.bars{list-style:none;margin:6px 0 14px;padding:0;display:flex;flex-direction:column;gap:12px}
+.bars li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;font-size:14.5px;align-items:baseline}
+.bars .val{font-family:var(--num);font-weight:800;font-size:17px}
+.bars .track{grid-column:1 / -1;position:relative;height:12px;border-radius:999px;background:var(--sand-soft)}
+.bars .fill{position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:999px;background:var(--green)}
+.bars .infl{position:absolute;top:-5px;bottom:-5px;left:var(--x);width:2px;background:#b4532a}
+.legend{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;margin:-4px 0 12px}
+.legend i{display:inline-block;width:2px;height:14px;background:#b4532a}
+
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 12px}
+.split div{border-radius:14px;padding:14px;background:var(--sand-soft)}
+.split b span{display:inline;font:inherit;color:inherit;margin:0}
+.split b{display:block;font-family:var(--num);font-weight:800;font-size:30px;line-height:1.1;color:var(--green)}
+.split div>span{display:block;font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:6px}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.facts li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:start}
+.facts .ico{width:30px;height:30px;border-radius:9px;background:var(--sage);color:var(--green);display:grid;place-items:center;margin-top:2px}
+.facts .ico svg{width:18px;height:18px}
+.facts li:nth-child(3n+2) .ico{background:var(--sand);color:var(--navy)} .facts li:nth-child(3n) .ico{background:var(--navy);color:var(--sand)}
+
+.qs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:q}
+.qs li{counter-increment:q;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 50px;position:relative}
+.qs li::before{content:counter(q);position:absolute;left:14px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--num);font-weight:700;font-size:13px;display:grid;place-items:center;line-height:1}
+
+.view{background:var(--sage);border-radius:18px;padding:20px 18px}
+.view h2{margin-bottom:8px}
+.view p{margin:0 0 10px}
+.view ul{margin:0 0 10px;padding-left:20px}
+.view li{margin-bottom:6px}
+.view .note{font-size:13.5px;color:var(--muted);margin:0}
+
+.cta{background:var(--green);color:var(--bg);border-radius:18px;padding:20px 18px;display:flex;flex-direction:column;gap:14px}
+.cta-top{display:flex;gap:14px;align-items:center}
+.cta-top h3{margin:0 0 4px;font-size:19px;line-height:1.45}
+.cta-top p{margin:0;color:var(--sage);font-size:15px}
+.cta-photo{width:64px;height:64px;border-radius:50%;overflow:hidden;flex:none;border:2px solid var(--sage)}
+.cta-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cta-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15.5px}
+.btn.wa{background:var(--sage);color:var(--green)}
+.btn.ghost{border:1.5px solid var(--sage);color:var(--bg)}
+.phone{font-family:var(--num);font-weight:700;color:var(--sage)}
+.copy{min-height:40px;border-radius:999px;border:1.5px solid rgba(212,224,217,.6);background:transparent;color:var(--bg);font:inherit;font-size:14px;padding:0 14px;cursor:pointer}
+.btn:focus-visible,.copy:focus-visible,.past:focus-visible{outline:3px solid #e6b65a;outline-offset:2px}
+
+.past{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);text-decoration:none}
+.past strong{font-size:16.5px}
+.past span{color:var(--muted);font-size:14px}
+.past b{color:var(--green);font-size:20px;line-height:1}
+
+.fine{font-size:13px;line-height:1.7;color:var(--muted);display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:16px}
+.fine ol{margin:4px 0 0;padding-left:20px}
+.scene{background:var(--paper);border:1px solid var(--line);border-left:0;border-radius:16px;padding:18px 16px}
+.scene p{margin:0 0 10px}
+.note{font-size:13px;color:var(--muted);margin:0}
+.quiz{background:var(--sand);border-radius:18px;padding:20px 16px;display:flex;flex-direction:column;gap:12px}
+.quiz h2{margin:0}
+.quiz .hint{margin:0;font-size:14.5px;color:var(--muted)}
+#quiz{display:flex;flex-direction:column;gap:10px}
+.qq{margin:0;border:0;padding:14px;background:var(--paper);border-radius:14px}
+.qq legend{padding:0;float:left;width:100%;font-weight:700;font-size:15.5px;line-height:1.6;margin-bottom:10px}
+.opts{clear:both;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opts label{position:relative;cursor:pointer}
+.opts input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opts span{display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:12px;border:1.5px solid var(--line);font-weight:700;color:var(--green);background:var(--paper)}
+.opts input:checked + span{background:var(--green);color:#ffffff;border-color:var(--green)}
+.opts input:focus-visible + span{outline:3px solid #e6b65a;outline-offset:2px}
+.go{min-height:50px;border:0;border-radius:999px;background:var(--green);color:#ffffff;font:inherit;font-weight:700;font-size:16px;cursor:pointer}
+.go:focus-visible,.redo:focus-visible{outline:3px solid #e6b65a;outline-offset:2px}
+.need{margin:0;font-size:14px;color:#8a3b12;font-weight:700}
+.result{background:var(--paper);border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.result .score{display:flex;align-items:baseline;gap:8px}
+.result .score b{font-family:var(--num);font-weight:800;font-size:48px;line-height:1;color:var(--green)}
+.result .score span{color:var(--muted);font-size:15px}
+.result h3{margin:0;font-size:19px}
+.result p{margin:0}
+.result .btn.wa{background:var(--green);color:#ffffff}
+.redo{border:0;background:none;color:var(--green);font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;padding:4px 0}
+.section-break{margin-top:6px}
+.scale{position:relative;margin:14px 0 0;display:flex;flex-direction:column;gap:4px}
+.scale canvas{display:block;width:100%;aspect-ratio:16/9;border-radius:14px;background:rgba(212,224,217,.08)}
+.scale figcaption{font-size:12.5px;color:var(--sage);letter-spacing:.03em}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+.bars .fill{transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.in .bars .fill{transform:scaleX(1)}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}.bars .fill{transform:none;transition:none}}
 </style>
 </head>
 <body>
-<main><h1>職場Ikigai｜阿維</h1><p>每月一個職場數字，陪你想清楚下一步。<br>第一期即將推出。</p></main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v4c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6"/><path d="M5 10v4c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-4"/><path d="M5 14v4c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-4"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="m7 15 4-4.5 3 3 5.5-6"/><path d="M15.5 7.5h4v4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4.5 19.5l1.2-3.7A8 8 0 1 1 8.6 18.6z"/><path d="M9 10.5c.3 1.8 2 3.6 4 4"/></symbol>
+<symbol id="i-pct" viewBox="0 0 24 24"><path d="M18.5 5.5l-13 13"/><circle cx="7" cy="7" r="2.3"/><circle cx="17" cy="17" r="2.3"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24"><path d="M6 20v-8"/><path d="M12 20V5"/><path d="M18 20v-11"/><path d="M3.5 20.5h17"/></symbol>
+</svg>
+<div class="wrap">
+  <header class="mast">
+    <div class="avatar"><img src="data:image/jpeg;base64,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" alt="阿維"></div>
+    <div>
+      <div class="brand">職場Ikigai｜阿維</div>
+      <div class="issue">第 1 期 · 2026.12.11 · 數據截至 2026 年 11 月</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <svg class="deco" viewBox="0 0 247 207" aria-hidden="true"><path fill="#d4e0d9" d="M246.83,151.11l-52.27-94.87c-.03-.25-.1-.51-.23-.74L162.58,1.02c-.34-.59-.98-.95-1.66-.95L33.44,0c-.69,0-1.32.36-1.66.96L.26,55.28c-.34.58-.35,1.3-.02,1.89l52.27,94.87c.03.25.1.51.23.74l31.74,54.47c.34.59.98.95,1.66.95l127.49.07c.69,0,1.32-.36,1.66-.96l31.51-54.33c.34-.58.35-1.3.02-1.89ZM189.76,152.23h-80.13c-.69,0-1.32-.37-1.660-.96l-28.08-48.7-24.26-43.67c-.71-1.28.21-2.85,1.68-2.85h80.57c.69,0,1.32.37,1.66.96l16.02,27.78,35.89,64.58c.71,1.28-.21,2.86-1.68,2.86Z"/></svg>
+    <h1>明年人工加幾多？</h1>
+    <figure class="scale"><canvas id="scale" role="img" aria-label="示意圖：一個天秤，左邊放住寫住加人工 1.44% 嘅糧單，右邊放住寫住物價 1.9% 嘅價錢牌，天秤向物價嗰邊沉落去"></canvas><figcaption>示意圖｜人工同物價放上天秤</figcaption></figure>
+    <div class="big"><div class="n"><span data-count="1.44" data-dec="2">1.44</span>%</div><div class="cap"><b>僱主估 2027 年平均加人工</b>Jobsdb 調查；另外兩份調查就估 2.9%–3.8%</div></div>
+  </section>
+  <section class="rv scene" aria-labelledby="scene-title">
+    <p class="label">常見處境</p>
+    <h2 id="scene-title">年尾考績，你試過未？</h2>
+    <p>考績傾完，上司話：「你今年做得唔錯，不過公司預算緊，加 2% 啦。」你點點頭，返到位心入面計數：租、家用、還卡數……同舊年比，好似冇乜分別。</p>
+    <p>做咗幾年，份工上手咗，但一年又一年，人工、職位、學到嘅嘢，好似都停咗喺同一個位。</p>
+    <p class="note">以上係好多打工仔都遇過嘅常見情況，唔係個別真人個案。</p>
+  </section>
+  <section class="rv quiz" aria-labelledby="quiz-title">
+    <p class="label">30 秒自我檢查</p>
+    <h2 id="quiz-title">你份工，係咪卡咗喺樽頸位？</h2>
+    <p class="hint">5 條題目，揀「係」或者「唔係」，做完即刻睇結果。</p>
+    <form id="quiz" novalidate>
+      <fieldset class="qq"><legend>1. 過去三年，你人工加幅係咪追唔上物價？</legend><div class="opts"><label><input type="radio" name="q1" value="1"><span>係</span></label><label><input type="radio" name="q1" value="0"><span>唔係</span></label></div></fieldset>
+      <fieldset class="qq"><legend>2. 過去兩年冇升過職，又睇唔到下一個升職位？</legend><div class="opts"><label><input type="radio" name="q2" value="1"><span>係</span></label><label><input type="radio" name="q2" value="0"><span>唔係</span></label></div></fieldset>
+      <fieldset class="qq"><legend>3. 你份糧主要跟年資行，做得好同做得一般分別唔大？</legend><div class="opts"><label><input type="radio" name="q3" value="1"><span>係</span></label><label><input type="radio" name="q3" value="0"><span>唔係</span></label></div></fieldset>
+      <fieldset class="qq"><legend>4. 大部分返工日子都係完成任務，好少學到新嘢？</legend><div class="opts"><label><input type="radio" name="q4" value="1"><span>係</span></label><label><input type="radio" name="q4" value="0"><span>唔係</span></label></div></fieldset>
+      <fieldset class="qq"><legend>5. 你有諗過轉工，但唔知可以轉去邊？</legend><div class="opts"><label><input type="radio" name="q5" value="1"><span>係</span></label><label><input type="radio" name="q5" value="0"><span>唔係</span></label></div></fieldset>
+      <button class="go" type="submit">睇結果</button>
+      <p class="need" id="quiz-need" hidden>還有題目未答，答齊 5 題再睇結果。</p>
+    </form>
+    <div class="result" id="quiz-result" hidden aria-live="polite">
+      <div class="score"><b id="r-score">0</b><span>/ 5 個訊號</span></div>
+      <h3 id="r-title"></h3>
+      <p id="r-text"></p>
+      <a class="btn wa" id="r-wa" href="https://wa.me/85266890491" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>想傾吓個結果？WhatsApp 我</a>
+      <button class="redo" id="r-redo" type="button">再做一次</button>
+    </div>
+    <p class="note">自我檢查只係俾你反思吓，唔係任何專業評估。</p>
+  </section>
+  <section class="rv quick" aria-labelledby="quick-title">
+    <h2 id="quick-title">一分鐘睇明：明年加幾多？</h2>
+    <div class="qcard"><div class="v"><span data-count="1.44" data-dec="2">1.44</span>%<small>2027 加人工預測</small></div><p>Jobsdb 調查入面嘅僱主估 2027 年平均加 1.44%；68% 公司預咗加幅同今年差唔多。</p></div>
+    <div class="qcard"><div class="v">約 <span data-count="1.9" data-dec="1">1.9</span>%<small>今年通脹預測</small></div><p>政府估 2026 年基本通脹大約 1.9%。人工加得少過通脹，其實買到嘅嘢仲少咗。</p></div>
+    <div class="qcard"><div class="v">約 2 倍<small>高評級員工分到</small></div><p>大約 11% 最高評級嘅員工，分咗大約 22% 嘅加薪預算。「平均」加幾多，唔等於你加幾多。</p></div>
+  </section>
+  <section class="rv box" aria-labelledby="three-title">
+    <p class="label">三份調查</p>
+    <h2 id="three-title">三份調查，三個數字</h2>
+    <div class="legend"><i></i>紅線：政府估今年基本通脹大約 1.9%</div>
+    <ul class="bars">
+      <li><span>Jobsdb（2026 年 10 月公佈）</span><span class="val">1.44%</span><span class="track"><span class="fill" style="--w:36%;background:#8DB0A9"></span><span class="infl" style="--x:47.5%"></span></span></li>
+      <li><span>香港人力資源管理學會（2026 年 11 月）</span><span class="val">2.9%</span><span class="track"><span class="fill" style="--w:72.5%;background:#3F7A78"></span><span class="infl" style="--x:47.5%"></span></span></li>
+      <li><span>WTW（2026 年 7 月）</span><span class="val">3.8%</span><span class="track"><span class="fill" style="--w:95%"></span><span class="infl" style="--x:47.5%"></span></span></li>
+    </ul>
+    <p>三份調查問嘅公司、行業同計法都唔同，所以數字有高有低。不過方向一樣：明年加幅都係溫和水平。</p>
+    <p>人力資源管理學會仲發現，得 44% 公司話明年會加人工，其餘 56% 未決定。</p>
+  </section>
+  <section class="rv box" aria-labelledby="avg-title">
+    <p class="label">平均背後</p>
+    <h2 id="avg-title">「平均」不等於你</h2>
+    <div class="split">
+      <div><b><span data-count="11" data-dec="0">11</span>%</b><span>員工攞到最高評級</span></div>
+      <div><b><span data-count="22" data-dec="0">22</span>%</b><span>佢哋分到嘅加薪預算</span></div>
+    </div>
+    <p>WTW 調查發現，公司將更多加薪預算俾咗表現最好嗰一小撮人。佔員工大約六成三嘅一般評級員工，只分到大約五成七預算，即係加幅一般低過平均。</p>
+    <ul class="facts">
+      <li><span class="ico"><svg class="i"><use href="#i-pct"/></svg></span><span>瀚納仕調查：42% 人話去年冇加人工，7% 仲要減人工。</span></li>
+      <li><span class="ico"><svg class="i"><use href="#i-trend"/></svg></span><span>同一份調查：59% 香港打工仔去年靠轉工加咗人工一成以上。不過諗去留嗰陣，事業發展機會（44%）同人工（41%）一樣重要。</span></li>
+      <li><span class="ico"><svg class="i"><use href="#i-target"/></svg></span><span>CTgoodjobs 調查：2025 年有 93% 打工仔冇升職。</span></li>
+    </ul>
+  </section>
+  <section class="rv view" aria-labelledby="view-title">
+    <p class="label">阿維的視角</p>
+    <h2 id="view-title">除咗人工，你最緊要係咩？</h2>
+    <p>我自己做財富管理，都有帶團隊。同想轉工嘅朋友傾開，發覺大家最在意嘅唔止係人工，而係付出同回報有冇掛鈎、自己仲有冇空間成長。</p>
+    <p>保險業係其中一條路，但唔係個個啱。佢嘅收入結構同打工好唔同：</p>
+    <ul>
+      <li>收入主要嚟自你自己建立嘅客戶關係（首年佣金、續期佣金），帶團隊之後再有管理收入。</li>
+      <li>冇固定加人工，收入同表現直接掛鈎；啱啱起步嗰陣收入可能唔穩定。</li>
+      <li>建立客戶基礎要時間，頭一兩年最辛苦，亦都係最多人走嘅時候。</li>
+    </ul>
+    <p>想知呢條路啱唔啱你，歡迎搵我傾，好處同難處我都會講清楚。</p>
+    <p class="note">以上只係講一般收入結構，個人收入要睇表現同投入，冇保證。</p>
+  </section>
+
+  <section class="rv cta">
+    <div class="cta-top">
+      <div class="cta-photo"><img src="data:image/jpeg;base64,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" alt=""></div>
+      <div>
+        <h3>想了解保險行業嘅發展前景？</h3>
+        <p>直接 WhatsApp 我，約 20 分鐘飲杯咖啡傾吓。</p>
+      </div>
+    </div>
+    <div class="cta-actions">
+      <a class="btn wa" id="wa-btn" href="https://wa.me/85266890491" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>WhatsApp 我</a>
+      <span class="phone" id="wa-num">+852 6689 0491</span>
+      <button class="copy" id="copy-btn" type="button">複製號碼</button>
+    </div>
+    <div class="cta-actions">
+      <a class="btn ghost" href="https://www.instagram.com/ahwai.hk/" target="_blank" rel="noopener">Instagram @ahwai.hk</a>
+    </div>
+  </section>
+
+  <!-- past-link -->
+  <a class="past" href="https://ahwai79.github.io/ikigai/issues/"><div><strong>往期職場Ikigai</strong><br><span>每月一個職場數字，之前每一期都可以返睇</span></div><b aria-hidden="true">→</b></a>
+
+  <footer class="fine">
+    <div><strong>阿維</strong>｜財富管理顧問　WhatsApp +852 6689 0491　IG <a href="https://www.instagram.com/ahwai.hk/" target="_blank" rel="noopener">@ahwai.hk</a></div>
+    <div><strong>【免責聲明】</strong>內容只作資訊分享，並不構成任何就業、投資或保險建議。文中提及的收入結構只屬一般描述，個人收入視乎表現，並無保證。</div>
+    <div>資料來源：
+      <ol>
+        <li>2027 加薪預測及企業預期：<a href="https://www.humanresourcesonline.net/hong-kong-employees-can-expect-an-average-1-44-salary-increase-in-2027-chi" target="_blank" rel="noopener">Jobsdb《2027 招聘、薪酬及福利調查報告》（經 HRO，2026 年 10 月）</a></li>
+        <li>2026 加薪及 2027 預測：香港人力資源管理學會「2026 年薪酬趨勢調查」（經 <a href="https://global.hk01.com/财经快讯/60393370/加人工-调查-香港雇员今年平均加薪2-8-跑输大湾区" target="_blank" rel="noopener">香港01</a> 及 <a href="https://www.thestandard.com.hk/news/article/343751/" target="_blank" rel="noopener">The Standard</a>，2026 年 11 月）</li>
+        <li>加薪預算分配：<a href="https://www.wtwco.com/en-hk/news/2026/07/employers-in-hong-kong-take-measured-approach-to-pay-as-salary-budgets-stabilise-wtw-finds" target="_blank" rel="noopener">WTW 薪酬預算規劃調查（2026 年 7 月）</a>、<a href="https://www.humanresourcesonline.net/hong-kong-pay-rises-trail-apac-average-as-employers-direct-more-budget-towards-high-performers-survey-chi" target="_blank" rel="noopener">HRO 中文報道</a></li>
+        <li>通脹預測：政府經濟顧問辦公室 2026 年第三季經濟報告（經 <a href="https://www.thestandard.com.hk/finance/article/348444/Hong-Kong-raises-2026-real-GDP-growth-forecast-to-48" target="_blank" rel="noopener">The Standard</a>，2026 年 11 月）</li>
+        <li>加薪、轉工動機：<a href="https://www.humanresourcesonline.net/nearly-three-in-five-job-movers-in-hong-kong-secured-a-10-plus-pay-rise-in-2025-chi" target="_blank" rel="noopener">瀚納仕《2026 亞洲薪酬指南》（經 HRO）</a></li>
+        <li>升職比例：<a href="https://www.humanresourcesonline.net/hong-kong-s-pay-divide-widens-as-employee-salaries-stall-and-managers-see-third-year-of-growth-chi" target="_blank" rel="noopener">CTgoodjobs 2026 年第一季薪酬及求職趨勢調查（經 HRO）</a></li>
+      </ol>
+    </div>
+  </footer>
+</div>
+<script>
+const WA_NUMBER = "85266890491";
+const WA_TEXT = "你好阿維，我睇咗職場Ikigai《明年人工加幾多？》，想約你傾吓。";
+document.getElementById("wa-btn").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_TEXT);
+const num = document.getElementById("wa-num");
+const copyBtn = document.getElementById("copy-btn");
+copyBtn.addEventListener("click", function () {
+  const done = function () { copyBtn.textContent = "已複製"; setTimeout(function(){ copyBtn.textContent = "複製號碼"; }, 1800); };
+  const select = function () { const r = document.createRange(); r.selectNodeContents(num); const s = window.getSelection(); s.removeAllRanges(); s.addRange(r); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(num.textContent).then(done).catch(select); else select();
+});
+// 動態：淡入、數字跳動
+{
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fmt = function (v, d) { return v.toFixed(d); };
+  const countUp = function (el) {
+    const end = Number(el.dataset.count), d = Number(el.dataset.dec || 0);
+    if (reduce) { el.textContent = fmt(end, d); return; }
+    const t0 = performance.now(), dur = 1100;
+    const step = function (t) { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(end * e, d); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("in");
+      en.target.querySelectorAll("[data-count]").forEach(countUp);
+      io.unobserve(en.target);
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+  document.querySelectorAll(".hero [data-count]").forEach(countUp);
+
+  // 封面：天秤
+  const cv = document.getElementById("scale");
+  const g = cv.getContext("2d");
+  const FONT = "'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif";
+  const NUM = "'Fustat','Noto Sans TC',sans-serif";
+  let W = 0, H = 0, start = null, raf = null;
+  const TILT = 0.16; // 物價嗰邊重啲
+  const size = function () {
+    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  const rr = function (x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); };
+  const pan = function (x, y, label, val, light) {
+    const pw = W * 0.26;
+    g.strokeStyle = "rgba(212,224,217,0.7)"; g.lineWidth = Math.max(1.5, W * 0.003);
+    g.beginPath(); g.moveTo(x, y); g.lineTo(x - pw * 0.45, y + H * 0.2); g.moveTo(x, y); g.lineTo(x + pw * 0.45, y + H * 0.2); g.stroke();
+    g.fillStyle = "#d4e0d9"; g.beginPath(); g.ellipse(x, y + H * 0.2, pw * 0.55, H * 0.035, 0, 0, Math.PI * 2); g.fill();
+    const cw = pw * 0.92, ch = H * 0.24, cx = x - cw / 2, cy = y + H * 0.2 - ch - H * 0.01;
+    g.save(); g.shadowColor = "rgba(0,0,0,0.25)"; g.shadowBlur = W * 0.02; rr(cx, cy, cw, ch, W * 0.012);
+    g.fillStyle = light ? "#ffffff" : "#e9e0d3"; g.fill(); g.restore();
+    g.fillStyle = "#05414c"; g.textAlign = "center"; g.textBaseline = "middle";
+    g.font = "700 " + Math.max(10, W * 0.03) + "px " + FONT; g.fillText(label, x, cy + ch * 0.3);
+    g.font = "600 " + Math.max(12, W * 0.048) + "px " + NUM; g.fillText(val, x, cy + ch * 0.7);
+  };
+  const draw = function (a) {
+    g.clearRect(0, 0, W, H);
+    const px = W * 0.5, py = H * 0.3, half = W * 0.31;
+    // 底座
+    g.fillStyle = "#d4e0d9";
+    g.beginPath(); g.moveTo(px - W * 0.012, py); g.lineTo(px + W * 0.012, py); g.lineTo(px + W * 0.02, H * 0.86); g.lineTo(px - W * 0.02, H * 0.86); g.closePath(); g.fill();
+    rr(px - W * 0.12, H * 0.86, W * 0.24, H * 0.05, H * 0.02); g.fill();
+    // 橫樑
+    const lx = px - Math.cos(a) * half, ly = py - Math.sin(a) * half;
+    const rx = px + Math.cos(a) * half, ry = py + Math.sin(a) * half;
+    g.strokeStyle = "#d4e0d9"; g.lineWidth = Math.max(4, W * 0.012); g.lineCap = "round";
+    g.beginPath(); g.moveTo(lx, ly); g.lineTo(rx, ry); g.stroke();
+    g.fillStyle = "#e9e0d3"; g.beginPath(); g.arc(px, py, W * 0.018, 0, Math.PI * 2); g.fill();
+    pan(lx, ly, "加人工", "+1.44%", true);
+    pan(rx, ry, "物價", "+1.9%", false);
+  };
+  const loop = function (t) {
+    if (start === null) start = t;
+    const k = Math.min(1, (t - start) / 1600);
+    const e = 1 - Math.pow(1 - k, 3);
+    const sway = k < 1 ? 0 : Math.sin((t - start - 1600) / 900) * 0.015;
+    draw(TILT * e + sway);
+    raf = requestAnimationFrame(loop);
+  };
+  const run = function () { size(); if (reduce) { draw(TILT); return; } if (raf) cancelAnimationFrame(raf); start = null; raf = requestAnimationFrame(loop); };
+  const ro = new ResizeObserver(function () { size(); if (reduce) draw(TILT); });
+  ro.observe(cv);
+  const vis = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { run(); vis.disconnect(); } });
+  vis.observe(cv);
+}
+// 自我檢查
+const RESULTS = [
+  [0, 1, "暫時穩陣", "你而家個位置唔錯。記住每年檢查一次：人工、職位同學到嘅嘢，有冇繼續向前。"],
+  [2, 3, "開始要留意", "有幾個訊號值得留意。可以先諗清楚：你最想改變嘅係收入、成長，定係方向？"],
+  [4, 5, "可能卡在樽頸位", "好多人做到呢個階段，都會開始重新諗過。想搵人一齊理清下一步，歡迎搵我傾吓。"]
+];
+const form = document.getElementById("quiz");
+const box = document.getElementById("quiz-result");
+const need = document.getElementById("quiz-need");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let score = 0, done = 0;
+  for (let i = 1; i <= 5; i++) {
+    const v = form.querySelector('input[name="q' + i + '"]:checked');
+    if (v) { done++; score += Number(v.value); }
+  }
+  if (done < 5) { need.hidden = false; return; }
+  need.hidden = true;
+  const r = RESULTS.find(function (x) { return score >= x[0] && score <= x[1]; });
+  document.getElementById("r-score").textContent = score;
+  document.getElementById("r-title").textContent = r[2];
+  document.getElementById("r-text").textContent = r[3];
+  document.getElementById("r-wa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent("你好阿維，我做咗職場Ikigai 個自我檢查，有 " + score + " 個訊號，想約你傾吓。");
+  form.hidden = true; box.hidden = false; box.scrollIntoView({behavior: "smooth", block: "nearest"});
+});
+document.getElementById("r-redo").addEventListener("click", function () {
+  form.reset(); box.hidden = true; form.hidden = false; need.hidden = true;
+});
+</script>
 </body>
 </html>
